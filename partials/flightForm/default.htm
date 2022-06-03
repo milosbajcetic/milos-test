@@ -1,0 +1,100 @@
+<div class="flightForm__wrapper">
+<div class="flightForm__header">
+        <h2 class="flightForm__title"> Book flight
+            </h2><h3 class="flightForm__subtitle">Please carefully fill flight data.</h3>
+    </div>
+
+<form class="w-100" data-request="{{ __SELF__ }}::onFormSubmit" novalidate data-request-flash data-request-validate> 
+ {{ form_token() }}
+
+    <div id="{{ __SELF__ }}_forms_flash">
+   
+    </div>
+
+    <div class="w-100">
+
+<div class="row mb-4">
+
+
+     <div class="col-12">
+    <div class="d-flex">
+<div class="form-floating flex-grow-1">
+  <select name="contact_destination" id="contact_destination" class="form-select" aria-label="Conact destination">
+  <option value="selektuj">Choose your origin destination</option>
+    <option value="A">UK</option>
+    <option value="B">Europe</option>
+    <option value="C">Asia</option>
+     <option value="D">Americas</option>
+  </select>
+  <label class="flightForm__destination-label" for="contact_destination">Flight from</label>
+
+
+
+    
+  
+</div><div class="d-flex align-items-center justify-content-center flex-grow-1" style="
+">
+<div id="swap" class="flightForm__toFromIcon">
+     
+<svg class="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18,10a1,1,0,0,0-1-1H5.41l2.3-2.29A1,1,0,0,0,6.29,5.29l-4,4a1,1,0,0,0-.21,1.09A1,1,0,0,0,3,11H17A1,1,0,0,0,18,10Zm3.92,3.62A1,1,0,0,0,21,13H7a1,1,0,0,0,0,2H18.59l-2.3,2.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l4-4A1,1,0,0,0,21.92,13.62Z"></path></svg>
+    </div>
+    </div><div class="form-floating flex-grow-1">
+<select name="contact_time" id="contact_departure" class="form-select" aria-label="Conact departure">
+  
+  <option value="selektuj">Choose your departure destination</option>
+    <option value="A">UK</option>
+    <option value="B">Europe</option>
+    <option value="C">Asia</option>
+    <option value="D">Americas </option>
+  </select><label class="flightForm__destination-label" for="contact_departure">Flight to</label>
+</div>
+</div></div>
+
+</div>
+
+<div class="row mt-5 mb-3">
+            <div class="col-12">
+    <div class="flightForm__available-slots text-center">Available slots for flight: 
+    <span class="flightForm__flight-id">FR-9351</span>
+            </div></div>
+        </div>
+
+<hr class="flightForm__hr">
+
+    <div class="row">
+            <div class="form-floating col-12 col-lg-6 mb-3">
+                <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name">
+                <label for="floatingInput">Name*</label>
+                <div class="invalid-feedback" data-validate-for="contact_name"></div> 
+            </div>
+                        <div class="form-floating col-12 col-lg-6 mb-3">
+                <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="name@example.com">
+                <label for="floatingInput">Email*</label>
+                <div class="invalid-feedback" data-validate-for="contact_email"></div>
+               
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-floating col-md-12 col-xl-6 mb-3">
+                <input type="text" id="contact_birthdate" name="contact_birthdate" class="form-control"
+                    placeholder="02.17.1995">
+                <label for="floatingInput">Birthdate</label>
+                <div class="invalid-feedback" data-validate-for="contact_birthdate"></div>
+            </div>
+        </div>
+
+
+        <div class="row mt-5 mb-3">
+            <div class="col-12">
+    <div class="flightForm__terms-wrapper">
+    By clicking "Book flight now" button I accept all <a class="flightForm__terms" href="#">Terms of Booking</a> and <a class="flightForm__terms" href="">Terms of Usage</a>.
+                
+                <div class="invalid-feedback" data-validate-for="contact_birthdate"></div>
+            </div></div>
+        </div>
+    </div>
+  <button data-attach-loading id="flightForm" type="submit" class="btn btn-primary flightForm__submit w-100">Book flight now</button>
+
+</form>
+
+</div>

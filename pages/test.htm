@@ -1,0 +1,38 @@
+url = "/test"
+layout = "test"
+title = "Test"
+
+[genericForm flightForm]
+rules[contact_name] = "required"
+rules[contact_birthdate] = "required"
+rules[contact_gender] = "required"
+rules[contact_email] = "required|email"
+rules_messages[contact_name.required] = "You need to enter your name."
+rules_messages[contact_gender.required] = "You need to choose your gender."
+rules_messages[contact_email.required] = "You need to enter your email."
+messages_success = "Your form was successfully submitted"
+messages_errors = "There were errors with your submission"
+inline_errors = "disabled"
+allowed_fields[] = "contact_name"
+allowed_fields[] = "contact_email"
+allowed_fields[] = "contact_birthdate"
+allowed_fields[] = "contact_gender"
+sanitize_data = "htmlspecialchars"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+==
+<section>
+<div class="container">
+<div style="background: #f9f9f9;" class="row justify-content-center align-items-center">
+<div class="col-12 col-lg-8">
+{% component 'flightForm' %}
+</div>
+
+{% partial 'airplaneSeats' %}
+
+</div>
+</div>
+</section>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="{{ activeLocale }}" class="{{ this.theme.id }}-theme {{ this.layout.id }}-layout {% if this.page.fixed_header_on_scroll == 'yes'%}fixed-header{% endif %}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ this.page.meta_title }}</title>
+        <meta name="description" content="{{ this.page.meta_description }}" />
+        <meta name="keywords" content="{{ this.page.meta_keywords }}" />
+        <meta name="title" content="{{ this.page.meta_title }}" />
+        <meta property="og:title" content="{{ this.page.meta_title }}" />
+        <meta property="og:description" content="{{ this.page.meta_description }}" />
+        {% if this.page.seo_image %}
+        <meta property="og:image" content="{{ this.page.seo_image.getPath() }}" />
+        {% endif %}
+        {% component 'alternateHrefLangElements' %}
+        <link rel="icon" href="{{ 'assets/public/img/icons/favicon.ico'|theme }}" sizes="any">
+        <link rel="icon" href="{{ 'assets/public/img/icons/kolosteam-icon.svg'|theme }}" type="image/svg+xml"> 
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ 'assets/public/img/icons/apple-touch-icon.png'|theme }}">
+        <link rel="icon" type="image/png" sizes="48x48" href="{{ 'assets/public/img/icons/favicon-48x48.png'|theme }}">
+        <link rel="icon" type="image/png" sizes="192x192" href="{{ 'assets/public/img/icons/favicon-192x192.png'|theme }}">
+        <link rel="preload" href="{{ 'assets/public/fonts/HelveticaNowVar.woff2'|theme }}" as="font" type="font/woff2" crossorigin="anonymous">
+        <link rel="preload" href="{{ 'assets/public/fonts/HelveticaNowVarItalic.woff2'|theme }}" as="font" type="font/woff2" crossorigin="anonymous" />
+        <meta name="theme-color" content="#ffffff">
+        <meta name="msapplication-TileColor" content="#ffffff">
+
+
+        {% styles %}
+         <link href="{{ 'assets/public/css/theme.css'|theme }}" rel="stylesheet" />
+
+
+    </head>
+    <body class="{{ this.theme.id }}-theme {{ this.layout.id }}-layout">
+
+        <!-- Header -->
+        <header id="layout-header">
+
+        </header>
+
+        <!-- Content -->
+        <div id="layout-content" class="layout-content {{ 'hero-page__'~this.page.id }}">
+            {% page %}
+        </div>
+
+        <!-- Footer -->
+        <footer class="hero-footer" id="layout-footer">
+        
+        </footer>
+
+        <!-- Scripts -->
+        <script type="text/javascript" src="{{ mix('/public/js/manifest.js') }}"></script>
+        <script type="text/javascript" src="{{ mix('/public/js/vendor.js') }}"></script>
+        <script type="text/javascript" src="{{ mix('/public/js/theme.js') }}"> </script>
+
+
+
+
+
+
+
+      
+        {% framework extras %}
+        {% scripts %}
+
+
+
+{% component 'googleTracker' %}
+    </body>
+</html>
